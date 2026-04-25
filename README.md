@@ -13,7 +13,7 @@ A lightweight and functional desktop application for tracking books. Built with 
     Book Tracking: Manage statuses (Available, Issued, Archived).
     Advanced Filtering: Instantly filter your collection by genre, author, or status.
     Customization: Integrated theme manager with support for:
-        🌙 Dark / Darcula
+        🌙 Dark
         ☀️ Light
         🍎 macOS Dark / Light
     Persistent Settings: The app automatically saves and restores your chosen theme on startup.
@@ -35,5 +35,7 @@ A lightweight and functional desktop application for tracking books. Built with 
 ⚙️ How it Works
 
     Database: On the first run, the app automatically creates a .db file to store your collection.
-    Themes: Go to "Settings" (Параметры) to switch themes on the fly. The UI refreshes instantly without needing a restart.
-    Persistence: Your preferences are stored using the Java Preferences API, so your UI choices stay consistent.
+    Themes: Go to "Settings" (Параметры) to switch themes on the fly. 
+	The UI refreshes instantly without needing a restart.
+    Persistence: Your preferences are stored using the Java Preferences API, 
+	so your UI choices stay consistent.
