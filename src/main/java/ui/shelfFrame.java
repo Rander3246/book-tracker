@@ -16,6 +16,7 @@ public class shelfFrame extends JFrame {
     private JTextField searchField;
     private JComboBox<String> statusFilter;
 
+
     public shelfFrame() {
         super("Book Shelf");
 
@@ -53,7 +54,7 @@ public class shelfFrame extends JFrame {
 
     private JPanel createToolbarPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
-        panel.setBackground(new Color(240, 240, 240));
+        //panel.setBackground(new Color(240, 240, 240));
 
         // Поиск
         panel.add(new JLabel("Поиск:"));
@@ -144,8 +145,19 @@ public class shelfFrame extends JFrame {
         JScrollPane scrollPane = new JScrollPane(booksTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
+        booksTable.setShowHorizontalLines(true);
+        booksTable.setShowVerticalLines(true);
+
+
+        booksTable.setShowGrid(true); // Включаем и горизонтальные, и вертикальные линии
+        booksTable.setGridColor(new Color(120, 120, 120, 50)); // Полупрозрачный серый цвет
+
+        booksTable.setGridColor(UIManager.getColor("Separator.foreground"));
+
         booksTable.putClientProperty("JTable.alternateRowColor", true);
-        UIManager.put("Table.alternateRowColor", new Color(245, 245, 245));
+
+        UIManager.put("Table.alternateRowColor", null);
+
 
         return panel;
     }
@@ -173,6 +185,10 @@ public class shelfFrame extends JFrame {
         });
         panel.add(clearBtn);
 
+        JButton settingsBtn = new JButton(" Параметры");
+        settingsBtn.addActionListener(e -> openSettings());
+        panel.add(settingsBtn);
+
         return panel;
     }
 
@@ -186,6 +202,13 @@ public class shelfFrame extends JFrame {
             storage.addBook(newBook);
             loadBooks();
         }
+    }
+
+    private void openSettings() {
+
+        Settings settings = new Settings(this);
+        settings.showDialog();
+
     }
 
     private void openEditBookDialog() {
