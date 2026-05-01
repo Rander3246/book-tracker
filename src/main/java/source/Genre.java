@@ -6,7 +6,8 @@ public enum Genre {
     FANTASY("Фэнтези"),
     DETECTIVE("Детектив"),
     HIST("История"),
-    CLASSIC("Классика");
+    CLASSIC("Классика"),
+    FICTION("Фантастика");
 
     private final String displayName;
 
@@ -20,6 +21,6 @@ public enum Genre {
 
     @Override
     public String toString() {
-        return displayName; // Теперь Swing будет рисовать "История" вместо "HIST"
+        return displayName;
     }
 }

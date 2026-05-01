@@ -41,8 +41,8 @@ public class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book task = (Book) o;
-        return id.equals(task.id);
+        Book b = (Book) o;
+        return id.equals(b.id);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Task{" + "title='" + title + '\'' + ", priority=" + genre + '}';
+        return "Book{" + "title='" + title + '\'' + ", genre=" + genre + '}';
     }
 }
